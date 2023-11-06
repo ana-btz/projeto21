@@ -26,7 +26,7 @@ export function handleApplicationErrors(
     });
   }
 
-  if (err.name === 'InvalidDataError') {
+  if (err.name === 'InvalidDataError' || err.name === 'InvalidCepError' || err.name === 'enrollmentNotFound') {
     return res.status(httpStatus.BAD_REQUEST).send({
       message: err.message,
     });
