@@ -11,14 +11,14 @@ export type RequestError = {
   message: string;
 };
 
-export type CEP = {
-  cep: string;
-};
-
 export type AddressEnrollment = {
   logradouro: string;
   complemento: string;
   bairro: string;
   cidade: string;
   uf: string;
+};
+
+export type CEP = {
+  cep: string;
 };
