@@ -7,3 +7,9 @@ export async function getTicketTypes(_req: AuthenticatedRequest, res: Response) 
     const ticketTypes = await ticketsService.getTicketTypes();
     return res.status(httpStatus.OK).send(ticketTypes);
 }
+
+export async function getTicket(req: AuthenticatedRequest, res: Response) {
+    const { userId } = req;
+    const ticket = await ticketsService.getTicketByUserId(userId);
+    return res.status(httpStatus.OK).send(ticket);
+}
